@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="no-js" lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>piClock Einstellungen</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li>piClock</li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="settings.html">Einstellungen</a></li>
+            <li><a href="status.html">Status</a> </li>
+            <li><a href="render_picture.html">Bild rendern</a></li>
+        </ul>
+    </nav>
+</header>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<main>
+    <h1>Einstellungen</h1>
+    <p>Hier kannst Du die Uhr nach Deinen Wünschen einstellen.</p>
+    <section id="section_clockmode">
+        <h2>Uhrmodus</h2>
+        <p>Hier kann eingestellt werden, ob die Uhr die Zeit in Wörtern oder Digital anzeigt.</p>
+        <form action="">
+            <input type="radio" name="clockMode" value="words" onclick="updateClockMode(this)" checked> Wortmodus
+            <input type="radio" name="clockMode" value="digital" onclick="updateClockMode(this)"> Digitalmodus
+            <input type="radio" name="tempMode" value="temp" onclick="updateClockMode(this)"> Temperaturanzeige
+        </form>
+    </section>
+    <section id="section_colors">
+        <h2>Farbeinstellungen</h2>
+        <p>Hier kann die Farbe für eingeschaltete, als auch ausgeschaltete Pixel der Uhr festgelegt werden.</p>
+        <p>
+            <label for="on_rgb_html">Eingeschaltete Pixel:</label>
+            <input id="on_rgb_html" class="color {onImmediateChange:'updateInfo_on(this);'}" value = "FFFF00">
+            <label for="r_on">R:</label>
+            <input id="r_on" size="2" value="255"/>
+            <label for="g_on">G:</label>
+            <input id="g_on" size="2" value="255"/>
+            <label for="b_on">B:</label>
+            <input id="b_on" size="2" value ="0"/>
+        </p>
+        <p>
+            <label for="off_rgb_html">Ausgeschaltete Pixel:</label>
+            <input id="off_rgb_html" class="color {onImmediateChange:'updateInfo_off(this);'}" value = "000000">
+            <label for="r_off">R:</label>
+            <input id="r_off" size="2" value="0"/>
+            <label for="g_off">R:</label>
+            <input id="g_off" size="2" value="0"/>
+            <label for="b_off">R:</label>
+            <input id="b_off" size="2" value="0"/>
+        </p>
+    </section>
+</main>
+
+<footer>
+    Vera Volmer und Valentin Boß 2015
+</footer>
+
+<script src="js/status.js"></script>
+<script src="jscolor/jscolor.js"></script>
+<script src="js/main.js"></script>
+</body>
